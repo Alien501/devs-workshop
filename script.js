@@ -53,6 +53,10 @@ addIncomeButton.addEventListener('click', () => {
         return;
     }
 
+    if(expenses.length == 0) {
+        expenseCardContainer.innerHTML = ''
+    }
+
     const incomeCard = `
                         <div class="expense-cat-card">
                             <div>
@@ -93,11 +97,13 @@ addExpenseButton.addEventListener('click', () => {
         alert('Invalid input');
         return;
     }
-
+    if(expenses.length == 0) {
+        expenseCardContainer.innerHTML = ''
+    }
     const expenseCard = `
                         <div class="expense-cat-card">
                             <div>
-                                <p>Income</p>
+                                <p>Expense</p>
                                 <p>${expenseDescription || 'NA'}</p>
                                 <p>${expenseDate}</p>
                             </div>
